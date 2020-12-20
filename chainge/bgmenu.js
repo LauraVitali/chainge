@@ -1,7 +1,22 @@
 const bgmenu = document.querySelector("#burger-menu");
-const nav = document.querySelector("#nav-mobile");
+const nav = document.querySelector("#nav-ul-desktop");
 const close = document.querySelector("#close-burger-menu");
 const header = document.querySelector("#mobile-menu-icons");
+
+
+if (window.innerWidth < 899) {
+    nav.classList.add("hide");
+}
+
+window.addEventListener("resize", toggleMenu);
+
+function toggleMenu() {
+    if (window.innerWidth < 899) {
+        nav.classList.add("hide");
+        console.log("oh yeah");
+    }
+}
+
 
 bgmenu.addEventListener("click", openNav);
 
@@ -13,6 +28,7 @@ function openNav() {
     bgmenu.classList.add("hide");
     close.classList.remove("hide");
     close.addEventListener("click", closeNav);
+    nav.addEventListener("click", closeNav);
 
     //    slideDown();
 }

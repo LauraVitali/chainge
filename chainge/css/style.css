@@ -17,6 +17,22 @@
 
 /* MOBILE VERSION */
 
+#nav-ul-desktop {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    font-size: 10vw;
+    margin: auto;
+    margin-top: 15vw;
+
+}
+
+
+
+#alternate-logo-desktop {
+    display: none;
+}
+
 .hide-from-mobile {
     display: none;
 }
@@ -55,9 +71,11 @@ header {
 
 #hero-image {
     width: 100vw;
-    height: auto;
+    height: 100vh;
     top: 0;
     z-index: -1;
+    object-fit: cover;
+
 }
 
 h2 {
@@ -114,6 +132,7 @@ p {
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 nav ul li {
@@ -121,6 +140,12 @@ nav ul li {
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 700;
+
+}
+
+li {
+    padding-bottom: 4vw;
+    text-align: center;
 }
 
 a {
@@ -174,24 +199,11 @@ footer {
 #close-burger-menu {
     width: 2.4rem;
     position: absolute;
-    left: 87vw;
+    right: 3vw;
+
 }
 
-#nav-mobile {
-    position: absolute;
-    width: 100vw;
-}
 
-#nav-ul-mobile {
-    padding: 0;
-    margin: 0;
-}
-
-#nav-ul-mobile li {
-    padding: 1.8rem 0;
-    text-align: center;
-    font-size: 1.5rem;
-}
 
 .community #contact-us {
     background-color: var(--terciary-green);
@@ -236,44 +248,47 @@ footer {
 /* DESKTOP DESIGN */
 @media only screen and (min-width: 899px) {
 
-    #footer-mobile {
-        display: none;
-    }
+
 
     #header-desktop {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         padding: 1vw 2vw;
+        height: 4vw;
     }
 
     #nav-ul-desktop {
         display: flex;
-        width: auto;
         margin: 0;
+        width: 60vw;
+    }
 
+    #mobile-menu-icons {
+        visibility: hidden;
     }
 
     nav {
-        display: flex;
-
+        display: grid;
+        grid-column: 4 / 5;
     }
 
     li {
-        padding: 1vw 3vw;
+        padding: 1vw 4vw;
     }
 
     li a {
         font-size: 1.2vw;
-
     }
 
     li:hover {
         background-color: var(--terciary-green);
+        height: 2vw;
     }
 
     #alternate-logo-desktop {
-        width: 15vw;
+        width: 20vw;
+        display: inherit;
+        position: absolute;
     }
 
     header nav ul li {

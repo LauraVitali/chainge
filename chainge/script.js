@@ -32,10 +32,12 @@ function buildNav(data) {
 
         clone.querySelector("li a").textContent = showPages._embedded["wp:term"][0][0].name;
 
+
         const a = clone.querySelector("a");
         a.href = "index.html?chainge=" + showPages._embedded["wp:term"][1][0].name;
         a.addEventListener("click", addContent);
         document.querySelector("nav ul").appendChild(clone);
+
     })
 }
 

@@ -14,9 +14,14 @@
 
     <header>
 
-        <div id="header-desktop" class="hide-from-mobile">
-            <img id="alternate-logo-desktop" src="images/SVG/alternate-logo.svg">
+        <div id="header-desktop">
+            <div id="mobile-menu-icons">
+                <img id="main-logo-mobile" src="images/SVG/main-logo.svg">
+                <img id="burger-menu" src="images/SVG/burger-menu.svg">
+                <img id="close-burger-menu" class="hide" src="images/SVG/close-bg-menu.svg">
+            </div>
 
+            <img id="alternate-logo-desktop" src="images/SVG/alternate-logo.svg">
             <nav>
                 <ul id="nav-ul-desktop">
                     <template id="navTemplate">
@@ -25,35 +30,9 @@
                     </template>
                 </ul>
             </nav>
-
         </div>
-        <div id="header-mobile">
-            <div id="mobile-menu-icons">
-                <img id="main-logo-mobile" src="images/SVG/main-logo.svg">
-                <img id="burger-menu" src="images/SVG/burger-menu.svg">
-                <img id="close-burger-menu" class="hide" src="images/SVG/close-bg-menu.svg">
-            </div>
-            <nav id="nav-mobile" class="hide">
-                <ul id="nav-ul-mobile">
-                    <a href="index.html">
-                        <li class="green-background">home</li>
-                    </a>
 
-                    <a href="about.html">
-                        <li class="white-background">about us</li>
-                    </a>
-                    <a href="partners.html">
-                        <li class="green-background">partners</li>
-                    </a>
-                    <a href="community.html">
-                        <li class="white-background">community</li>
-                    </a>
-                    <a href="jobs.html">
-                        <li class="green-background">jobs</li>
-                    </a>
-                </ul>
-            </nav>
-        </div>
+
     </header>
 
     <main>
@@ -131,8 +110,9 @@
             <img id="logo-footer" src="images/SVG/main-logo.svg">
         </div>
     </footer>
-    <script src="bgmenu.js"></script>
     <script src="script.js"></script>
+    <script src="bgmenu.js"></script>
+
 </body>
 
 
