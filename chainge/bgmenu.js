@@ -9,12 +9,12 @@ function openNav() {
     console.log("openNav");
 
     nav.classList.remove("hide");
-//    header.classList.add("white-background");
+    //    header.classList.add("white-background");
     bgmenu.classList.add("hide");
     close.classList.remove("hide");
     close.addEventListener("click", closeNav);
 
-//    slideDown();
+    //    slideDown();
 }
 
 //function slideDown() {
@@ -42,5 +42,3 @@ function closeNav() {
     nav.classList.add("hide");
     bgmenu.addEventListener("click", openNav);
 }
-
-

@@ -1,61 +1,69 @@
-fetch("http://umarkx.com/WP/wp-json/wp/v2/chainge?_embed")
-    .then(initial => initial.json())
-    .then(callback);
+let allData = "";
+let pagetoShow = "";
 
-function callback(data) {
+window.addEventListener("DOMContentLoaded", fetchData);
+
+function fetchData() {
+    fetch("http://umarkx.com/WP/wp-json/wp/v2/chainge?_embed")
+        .then(initial => initial.json())
+        .then(handleData);
+}
+
+function handleData(data) {
+    buildNav(data);
+    allData = data;
+    getURLparams();
+}
+
+
+function getURLparams() {
+    const params = new URLSearchParams(window.location.search);
+    console.log("URLSearchParams " + window.location);
+    pagetoShow = params.get("chainge");
+    document.querySelector("body").id = pagetoShow;
+    console.log(pagetoShow);
+}
+
+function buildNav(data) {
     data.forEach(showPages => {
-        console.log(data);
 
         const template = document.querySelector("#navTemplate").content;
         const clone = template.cloneNode(true);
 
-        clone.querySelector("li").textContent = showPages._embedded["wp:term"][0][0].name;
+        clone.querySelector("li a").textContent = showPages._embedded["wp:term"][0][0].name;
 
-        clone.querySelector("a").href = "index.html?chainge=" + showPages._embedded["wp:term"][1][0].name;
-
-
-        document.querySelector("nav").appendChild(clone);
-
-
+        const a = clone.querySelector("a");
+        a.href = "index.html?chainge=" + showPages._embedded["wp:term"][1][0].name;
+        a.addEventListener("click", addContent);
+        document.querySelector("nav ul").appendChild(clone);
     })
-
-
-    data.forEach(showRest => {
-        console.log(data);
-
-        const templateMain = document.querySelector("#mainTemplate").content;
-        const cloneMain = templateMain.cloneNode(true);
-
-        if (showRest._embedded["wp:term"][1][0].name == chaingeFromURL) {
-
-            cloneMain.querySelector(".title").innerHTML = showRest.title.rendered;
-            cloneMain.querySelector("#hero-image").setAttribute("src", showRest.heroimg.guid);
-
-        }
-
-
-        document.querySelector("main").appendChild(cloneMain);
-
-
-
-    })
-
 }
 
+function addContent(e) {
+    console.log(e);
 
-const params = new URLSearchParams(window.location.search);
-console.log("URLSearchParams " + window.location);
-const chaingeFromURL = params.get("chainge");
-console.log(chaingeFromURL);
-
+    e.preventDefault();
 
 
-/*fetch("http://umarkx.com/WP/wp-json/wp/v2/chainge?_embed")
-    .then(initial => initial.json())
-    .then(databack);
+    let newurl = e.target.href;
+    window.history.pushState({
+        path: newurl
+    }, "", newurl);
+
+    getURLparams();
 
 
-function databack(restData) {
+    const dataToDisplay = allData.filter(elem => {
+        return elem._embedded["wp:term"][1][0].name == pagetoShow;
+    });
 
 
-}*/
+    document.querySelector(".title").innerHTML = dataToDisplay[0].title.rendered;
+
+    document.querySelector("#hero-image").setAttribute("src", dataToDisplay[0].heroimg.guid);
+
+    document.querySelector("#text p").innerHTML = dataToDisplay[0].paragraph;
+
+
+
+}

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="homepage about partners community">
+<body>
 
     <header>
 
@@ -18,19 +18,15 @@
             <img id="alternate-logo-desktop" src="images/SVG/alternate-logo.svg">
 
             <nav>
-                <template id="navTemplate">
-                    <ul id="nav-ul-desktop">
-                        <a href="index.html">
-                            <li>home</li>
-                        </a>
-                    </ul>
-                </template>
+                <ul id="nav-ul-desktop">
+                    <template id="navTemplate">
+                        <li><a href="index.html">
+                                home</a></li>
+                    </template>
+                </ul>
             </nav>
 
         </div>
-
-
-
         <div id="header-mobile">
             <div id="mobile-menu-icons">
                 <img id="main-logo-mobile" src="images/SVG/main-logo.svg">
@@ -42,6 +38,7 @@
                     <a href="index.html">
                         <li class="green-background">home</li>
                     </a>
+
                     <a href="about.html">
                         <li class="white-background">about us</li>
                     </a>
@@ -60,27 +57,26 @@
     </header>
 
     <main>
-        <template id="mainTemplate">
-            <section id="hero-image-container">
-                <img id="hero-image" src="images/hero-image-home.jpg">
+        <section id="hero-image-container">
+            <img id="hero-image" src="images/hero-image-home.jpg">
+        </section>
+        <section id="text-container" class="section-margin">
+            <h2 class="title">We are Chainge</h2>
+            <div id="text">
+                <!--                <img id="round-img" class="hide-from-mobile" src="images/bridge-black-and-white-square.jpg">-->
+                <p class="columns">Chainge sees the green transition as a natural part of our business. In logistics, we use sustainability as our competitive parameter in our work to reduce the environmental impact of transporting goods in the city.<br>
+                    We use electric freight bicycles as a replacement for diesel vans to deliver goods to private individuals and companies as well as the public sector. We focus on LML; delivery of the item the last kilometers out to the customer.</p>
+            </div>
+        </section>
+        <div id="editor">
+            <section id="quote-container" class="margin-bottom">
+                <p id="quote">"Our goal is to re-invent logistics in the city, by transporting goods around using bicycles."</p>
             </section>
-            <section id="text-container" class="section-margin">
-                <h2 class="title">We are Chainge</h2>
-                <div id="text">
-                    <!--                <img id="round-img" class="hide-from-mobile" src="images/bridge-black-and-white-square.jpg">-->
-                    <p class="columns">Chainge sees the green transition as a natural part of our business. In logistics, we use sustainability as our competitive parameter in our work to reduce the environmental impact of transporting goods in the city.<br>
-                        We use electric freight bicycles as a replacement for diesel vans to deliver goods to private individuals and companies as well as the public sector. We focus on LML; delivery of the item the last kilometers out to the customer.</p>
-                </div>
+            <section id="map-container" class="section-margin margin-bottom">
+                <h2>We deliver in this area</h2>
+                <img id="map" src="images/SVG/map.svg">
             </section>
-            <div id="editor">
-                <section id="quote-container" class="margin-bottom">
-                    <p id="quote">"Our goal is to re-invent logistics in the city, by transporting goods around using bicycles."</p>
-                </section>
-                <section id="map-container" class="section-margin margin-bottom">
-                    <h2>We deliver in this area</h2>
-                    <img id="map" src="images/SVG/map.svg">
-                </section>
-                <!--           <section id="pictures" class="margin-bottom">
+            <!--           <section id="pictures" class="margin-bottom">
                 <a><img id="a" src="images/picture-1.jpg"></a>
                 <a><img id="b" src="images/picture-2.jpg"></a>
                 <a><img id="c" src="images/picture-3.jpg"></a>
@@ -97,8 +93,7 @@
                     <img id="partner-logo" src="images/frugt-logo.png">
                 </div>
             </section>-->
-            </div>
-        </template>
+        </div>
     </main>
 
 
