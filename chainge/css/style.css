@@ -17,6 +17,11 @@
 
 /* MOBILE VERSION */
 
+
+.hide {
+    display: none;
+}
+
 #nav-ul-desktop {
     margin: 0;
     width: 100vw;
@@ -201,7 +206,7 @@ footer {
 
 
 
-.community #contact-us {
+#community #contact-us {
     background-color: var(--terciary-green);
     padding: 6vw 0;
     display: flex;
@@ -209,35 +214,39 @@ footer {
     align-items: center;
 }
 
-.community #mail-icon {
+#community #mail-icon {
     width: 18vw;
 }
 
-.about #pictures img {
+#about #pictures img {
     width: 100%;
 }
 
-.partners #partner-logo {
+#partners #partner-logo {
     width: 80%;
     margin: 12vw 0;
 }
 
-.partners #partners-logos {
+#partners #partners-logos {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.about #text-container {
+#about #text-container {
     background-color: var(--terciary-green);
 }
 
-.partners #text-container {
+#partners #text-container {
     background-color: var(--terciary-green);
 }
 
-.community #text-container {
+#community #text-container {
     background-color: var(--terciary-green);
+}
+
+#community #quote {
+    margin: 0 4vw;
 }
 
 
@@ -245,6 +254,17 @@ footer {
 @media only screen and (min-width: 899px) {
 
 
+    #hero-image {
+        width: 100vw;
+        height: auto;
+        top: 0;
+        z-index: -1;
+
+    }
+
+    #footer-mobile {
+        display: none;
+    }
 
     #header-desktop {
         display: grid;
@@ -270,6 +290,7 @@ footer {
 
     li {
         padding: 1vw 4vw;
+        height: 2vw;
     }
 
     li a {
@@ -355,59 +376,63 @@ footer {
         background-color: var(--yellow);
     }
 
-    .community #contact-us {
+    #community #contact-us {
         padding-left: 12vw;
         padding-right: 12vw;
         flex-direction: row;
         justify-content: space-around;
     }
 
-    .community #contact-us #quote {
-        width: 40vw;
+    #community #contact-us #quote {
+
+        font-size: 2vw;
     }
 
-    .community #mail-icon {
+    #community #mail-icon {
         width: 6vw;
+        color: aqua;
     }
 
-    .about #pictures {
+    #about #pictures {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 5vw;
+
     }
 
-    .about #pictures img {
+    #about #pictures img {
         width: 30vw;
         position: relative;
     }
 
-    .about #pictures #a {
+    #about #pictures #a {
         left: -10vw;
         z-index: -1;
     }
 
-    .about #pictures a:hover {
+    #about #pictures a:hover {
         z-index: 100;
     }
 
-    .about #pictures #b {
+    #about #pictures #b {
         top: -10vw;
         left: 6vw;
         z-index: -1;
     }
 
-    .about #pictures #c {
+    #about #pictures #c {
         left: -4vw;
         top: -23vw;
         z-index: -1;
     }
 
-    .partners #partner-logo {
+    #partners #partner-logo {
         width: 20%;
         margin: 0;
     }
 
-    .partners #partners-logos {
+    #partners #partners-logos {
         flex-direction: row;
         justify-content: space-around;
         margin: 2vw 0;

@@ -67,5 +67,43 @@ function addContent(e) {
     document.querySelector("#text p").innerHTML = dataToDisplay[0].paragraph;
 
 
+    //POPULATE PARTNERS
+    if (pagetoShow === "partners") {
+        document.querySelector("main #partners").classList.remove("hide");
+        console.log("jebena istina")
+    } else {
+        document.querySelector("main #partners").classList.add("hide");
+
+    }
+
+    //POPULATE HOME
+    if (pagetoShow === "index") {
+        document.querySelector("main #quote-container").classList.remove("hide");
+        document.querySelector("main #map-container").classList.remove("hide");
+    } else {
+        document.querySelector("main #quote-container").classList.add("hide");
+        document.querySelector("main #map-container").classList.add("hide");
+
+    }
+
+    //POPULATE ABOUT
+    if (pagetoShow === "about") {
+        document.querySelector("main #pictures").classList.remove("hide");
+    } else {
+        document.querySelector("main #pictures").classList.add("hide");
+    }
+
+    //POPULATE COMMUNITY
+    if (pagetoShow === "community") {
+        document.querySelector("main #contact-us").classList.remove("hide");
+    } else {
+        document.querySelector("main #contact-us").classList.add("hide");
+    }
+
+
+
+
+
+
 
 }
