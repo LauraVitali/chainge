@@ -93,6 +93,13 @@ h3 {
     margin: 1vw 0;
 }
 
+h4 {
+    font-size: 1.8vw;
+    font-family: var(--body-font);
+    font-weight: 100;
+
+}
+
 p {
     text-align: center;
     font-family: var(--body-font);
@@ -134,6 +141,7 @@ p {
 ul {
     list-style: none;
     padding: 0;
+    height: 4vw;
 }
 
 nav ul li {
@@ -249,6 +257,54 @@ footer {
     margin: 0 4vw;
 }
 
+#jobs #jobs {
+    columns: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vw;
+}
+
+
+/** FORM SYLE IS IN THE NEXT FEW CLASSES **/
+.wpforms-form {
+    background-color: #eee;
+    padding: 0px 15px;
+    font-family: var(--body-font);
+    font-weight: 300;
+    font-size: 4rem;
+}
+
+/** WPFORMS Input Textarea **/
+.wpforms-form input,
+.wpforms-form textarea {
+    height: 2rem;
+    width: 15rem;
+}
+
+/** WPFORMS BUTTON COLOR **/
+.wpforms-form button {
+    background-color: var(--yellow);
+    height: 2.5rem;
+}
+
+/** WPFORMS SUBMIT BUTTON **/
+button.wpforms-submit {
+    color: var(--black);
+    background-color: var(--yellow);
+    margin-bottom: 1rem;
+}
+
+div.wpforms-container-full .wpforms-form .wpforms-field.wpforms-field-textarea textarea {
+    width: 90vw;
+    height: 300px;
+    margin-top: 2rem;
+
+
+}
+
+
 
 /* DESKTOP DESIGN */
 @media only screen and (min-width: 899px) {
@@ -277,6 +333,9 @@ footer {
         display: flex;
         margin: 0;
         width: 60vw;
+        height: 4vw;
+        grid-column: 4 / 5;
+
     }
 
     #mobile-menu-icons {
@@ -285,11 +344,11 @@ footer {
 
     nav {
         display: grid;
-        grid-column: 4 / 5;
+        grid-column: 5 / 5;
     }
 
     li {
-        padding: 1vw 4vw;
+        padding: 1vw 3vw;
         height: 2vw;
     }
 
@@ -303,7 +362,7 @@ footer {
     }
 
     #alternate-logo-desktop {
-        width: 20vw;
+        width: 27vw;
         display: inherit;
         position: absolute;
     }
@@ -419,6 +478,7 @@ footer {
         top: -10vw;
         left: 6vw;
         z-index: -1;
+
     }
 
     #about #pictures #c {
@@ -437,6 +497,8 @@ footer {
         justify-content: space-around;
         margin: 2vw 0;
     }
+
+
 }
 
 /* ALL CLASSES and ANIMATIONS */

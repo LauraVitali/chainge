@@ -70,7 +70,6 @@ function addContent(e) {
     //POPULATE PARTNERS
     if (pagetoShow === "partners") {
         document.querySelector("main #partners").classList.remove("hide");
-        console.log("jebena istina")
     } else {
         document.querySelector("main #partners").classList.add("hide");
 
@@ -99,6 +98,16 @@ function addContent(e) {
     } else {
         document.querySelector("main #contact-us").classList.add("hide");
     }
+
+    //POPULATE JOBS
+    if (pagetoShow === "jobs") {
+        document.querySelector("main #jobs").classList.remove("hide");
+        document.querySelector("main #jobs #form").innerHTML = dataToDisplay[0].content.rendered;
+    } else {
+        document.querySelector("main #contact-us").classList.add("hide");
+        document.querySelector("main #jobs #form").innerHTML = null;
+    }
+
 
 
 
