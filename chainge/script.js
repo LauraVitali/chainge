@@ -1,3 +1,4 @@
+// define global variables to be reached from outside functionsaa
 let allData = "";
 let pagetoShow = "";
 
@@ -20,6 +21,7 @@ function getURLparams() {
     const params = new URLSearchParams(window.location.search);
     console.log("URLSearchParams " + window.location);
     pagetoShow = params.get("chainge");
+    // add id to body so different pages could be styled differently
     document.querySelector("body").id = pagetoShow;
     console.log(pagetoShow);
 }
@@ -43,27 +45,22 @@ function buildNav(data) {
 
 function addContent(e) {
     console.log(e);
-
+    // prevent page reload when nav is clicked
     e.preventDefault();
-
-
+    // modification from https://stackoverflow.com/questions/3338642/updating-address-bar-with-new-url-without-hash-or-reloading-the-page
     let newurl = e.target.href;
+    console.log(newurl);
     window.history.pushState({
         path: newurl
     }, "", newurl);
-
     getURLparams();
-
-
     const dataToDisplay = allData.filter(elem => {
         return elem._embedded["wp:term"][1][0].name == pagetoShow;
     });
 
-
+    // populate common content
     document.querySelector(".title").innerHTML = dataToDisplay[0].title.rendered;
-
     document.querySelector("#hero-image").setAttribute("src", dataToDisplay[0].heroimg.guid);
-
     document.querySelector("#text p").innerHTML = dataToDisplay[0].paragraph;
 
 
@@ -72,7 +69,6 @@ function addContent(e) {
         document.querySelector("main #partners").classList.remove("hide");
     } else {
         document.querySelector("main #partners").classList.add("hide");
-
     }
 
     //POPULATE HOME
@@ -82,7 +78,6 @@ function addContent(e) {
     } else {
         document.querySelector("main #quote-container").classList.add("hide");
         document.querySelector("main #map-container").classList.add("hide");
-
     }
 
     //POPULATE ABOUT
@@ -104,7 +99,7 @@ function addContent(e) {
         document.querySelector("main #jobs").classList.remove("hide");
         document.querySelector("main #jobs #form").innerHTML = dataToDisplay[0].content.rendered;
     } else {
-        document.querySelector("main #contact-us").classList.add("hide");
+        document.querySelector("main #jobs").classList.add("hide");
         document.querySelector("main #jobs #form").innerHTML = null;
     }
 
